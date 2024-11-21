@@ -17,7 +17,7 @@
         formData.append('file', file);
 
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', '/api/upload', true);
+        xhr.open('POST', '/upload', true);
 
         xhr.upload.addEventListener('progress', (event) => {
             if (event.lengthComputable) {
