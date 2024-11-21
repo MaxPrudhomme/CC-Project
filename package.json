@@ -17,10 +17,16 @@
 		"prettier-plugin-svelte": "^3.2.6",
 		"svelte": "^5.0.0",
 		"svelte-adapter-azure-swa": "^0.20.1",
-		"vite": "^5.0.3"
+		"vite": "^5.0.3",
+		"vite-plugin-commonjs": "^0.10.4"
 	},
 	"dependencies": {
 		"@azure/storage-blob": "^12.26.0",
-		"@sveltejs/adapter-static": "^3.0.6"
+		"@sveltejs/adapter-static": "^3.0.6",
+		"@tonejs/midi": "^2.0.28",
+		"dotenv": "^16.4.5",
+		"mime-types": "^2.1.35",
+		"tone": "^15.0.4",
+		"wavesurfer.js": "^7.8.9"
 	}
 }

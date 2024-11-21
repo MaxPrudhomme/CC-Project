@@ -1,6 +1,10 @@
 <script>
 	import '../global.css';
     import UploadManager from '$lib/Upload-Manager/Upload-Manager.svelte';
+    import AudioPlayer from '$lib/Audio-Player/Audio-Player.svelte';
+    import MidiPlayer from '$lib/Audio-Player/MIDI-Player.svelte';
+
+    let file = null;
 </script>
 
 <div id="container">
@@ -9,7 +13,9 @@
     </header>
 
     <div id="content">
-        <UploadManager />
+        <AudioPlayer bind:file={file}/>
+        <MidiPlayer />
+        <UploadManager bind:file={file}/>
     </div>
 
     <footer>
@@ -43,8 +49,10 @@
     #content {
         width: 100%;
         height: 100%;
+        gap: 1rem;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
+        flex-direction: column;
         align-items: center;
     }
 </style>
