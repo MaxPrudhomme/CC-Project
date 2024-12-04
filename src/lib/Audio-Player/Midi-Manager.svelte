@@ -1,7 +1,7 @@
 <script>
     import { writable } from 'svelte/store';
     export let blob = null;
-    const downloadStatus = writable(null);
+    const downloadStatus = writable("Waiting for a file...");
     let intervalId = null;
 
     const downloadFile = async () => {
