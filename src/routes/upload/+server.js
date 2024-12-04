@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const sasToken = process.env.AZURE_SAS_TOKEN;
+const sasToken = process.env.AZURE_UPLOAD_TOKEN;
 const accountName = "ccprojectsa";
 const containerName = "file-input";
 
@@ -63,7 +63,9 @@ export async function POST({ request }) {
         });
 
         return new Response(
-            JSON.stringify({ message: 'File uploaded successfully!' }),
+            JSON.stringify({ message: 'File uploaded successfully!',
+                blobName: blobName,
+             }),
             { status: 200, headers: { 'Content-Type': 'application/json' } }
         );
     } catch (error) {

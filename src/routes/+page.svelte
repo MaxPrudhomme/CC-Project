@@ -2,9 +2,10 @@
 	import '../global.css';
     import UploadManager from '$lib/Upload-Manager/Upload-Manager.svelte';
     import AudioPlayer from '$lib/Audio-Player/Audio-Player.svelte';
-    import MidiPlayer from '$lib/Audio-Player/MIDI-Player.svelte';
+    import MidiManager from '$lib/Audio-Player/Midi-Manager.svelte';
 
     let file = null;
+    let blob = null;
 </script>
 
 <div id="container">
@@ -14,8 +15,8 @@
 
     <div id="content">
         <AudioPlayer bind:file={file}/>
-        <MidiPlayer />
-        <UploadManager bind:file={file}/>
+        <MidiManager bind:blob={blob}/>
+        <UploadManager bind:file={file} bind:blob={blob}/>
     </div>
 
     <footer>

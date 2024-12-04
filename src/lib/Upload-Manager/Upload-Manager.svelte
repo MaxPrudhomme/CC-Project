@@ -3,6 +3,8 @@
     import Icon from '$icon';
 
     export let file = null; 
+    export let blob = null;
+
     let alert = null;
     let state = null;
     let progress = 0;
@@ -30,6 +32,11 @@
                 const result = JSON.parse(xhr.responseText);
                 state = true;
                 progress = 100;
+
+                // Assuming the response contains a "blob" field and you want to store its content in the `blob` variable.
+                if (result && result.blobName) {
+                    blob = result.blobName;  // Save the content of the blob field in the blob variable
+                }
             } else {
                 state = null;
                 alert = 'Upload failed miserably.';
